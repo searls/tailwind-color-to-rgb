@@ -1,0 +1,19 @@
+{
+  "name": "tailwind-color-to-rgb",
+  "version": "1.0.0",
+  "description": "Converts tailwind colors to space-separated RGB values",
+  "main": "index.js",
+  "bin": "bin/tailwind-color-to-rgb",
+  "scripts": {
+    "test": "standard --fix"
+  },
+  "author": "Justin Searls <searls@gmail.com>",
+  "homepage": "https://github.com/searls/tailwind-color-to-rgb",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.2.2"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  }
+}

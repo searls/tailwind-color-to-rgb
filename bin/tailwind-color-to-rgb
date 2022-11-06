@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+const readline = require('readline')
+const tailwindColorToRgb = require('../index')
+
+console.log(`Type a tailwind color for its space-separated RGB values
+
+  Example:
+
+  > rose-500
+  244 63 94; /* rose-500 */
+
+  Confused? See:
+    https://tailwindcss.com/docs/customizing-colors#using-css-variables
+
+`)
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+})
+process.stdout.write('> ')
+rl.on('line', (line) => {
+  line = line.trim()
+  if (line) {
+    const rgb = tailwindColorToRgb(line)
+    if (rgb) {
+      console.log(`${rgb}; /* ${line} */`)
+    } else {
+      console.error(`'${line}' not found`)
+    }
+  }
+  process.stdout.write('> ')
+})
+
+rl.once('close', () => {})
